@@ -1,0 +1,102 @@
+{
+    "systems": {
+        "binary": {
+            "center": {
+                "type": "fixed",
+                "mass": 1.0,
+                "radius": 1.0,
+                "pos": [0.0, 0.0, 0.0]
+            },
+            "moon1": {
+                "type": "orbit",
+                "mass": 7.347e22,
+                "radius": 1737000.0,
+                "orbit": {
+                    "ref": "center",
+                    "apo": 50000000.0,
+                    "per": 50000000.0,
+                    "_a": 0.5,
+                    "e": 0.9,
+                    "om": 0.0,
+                    "i": 0.0,
+                    "w": 0.0,
+                    "T": 27.322
+                }
+            },
+            "moon2": {
+                "type": "orbit",
+                "mass": 7.347e22,
+                "radius": 1737000.0,
+                "orbit": {
+                    "ref": "center",
+                    "apo": 50000000.0,
+                    "per": 50000000.0,
+                    "_a": 0.5,
+                    "_e": 0.9,
+                    "om": 180.0,
+                    "i": 0.0,
+                    "w": 0.0,
+                    "T": 27.322
+                }
+            }
+        },
+        "earth_moon": {
+            "earth": {
+                "type": "fixed",
+                "mass": 5.972e24,
+                "radius": 6371000.0,
+                "pos": [0.0, 0.0, 0.0]
+            },
+            "moon": {
+                "type": "orbit",
+                "mass": 7.347e22,
+                "radius": 1737000.0,
+                "orbit": {
+                    "ref": "earth",
+                    "apo": 405400000.0,
+                    "per": 363228900.0,
+                    "_a": 0.5,
+                    "_e": 0.9,
+                    "om": 0.0,
+                    "i": 0.0,
+                    "w": 0.0,
+                    "T": 27.322
+                }
+            }
+        }
+    },
+    "simulations": {
+        "earth_moon_transfer": {
+            "simtime": 10.0,
+            "simdelta": 6.0,
+            "_simstep": 0,
+            "system": "earth_moon",
+            "bodies": {
+                "spacecraft0": {
+                    "color": "r",
+                    "vel": [10.0, 10851.2, 0.0],
+                    "pos": [6671000.0, 0.0, 0.0]
+                }
+            }
+        },
+        "superloop": {
+            "simtime": 30.0,
+            "simdelta": 6.0,
+            "_simstep": 0,
+            "system": "binary",
+            "bodies": {
+                "spacecraft0": {
+                    "color": "r",
+                    "relatives": [
+                        {
+                            "ref": "moon1",
+                            "color": "m"
+                        }
+                    ],
+                    "vel": [0.0, 0.0, 100.0],
+                    "pos": [6671000.0, 0.0, 0.0]
+                }
+            }
+        }
+    }
+}
