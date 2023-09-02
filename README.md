@@ -6,7 +6,7 @@ N-Body orbit simulation with "on rails" bodies
 The main purpose of this project is experimenting with n-body physics and orbital mechanics at real solar system scales.
 I wanted to find a simple algorithm to stable realtime orbits with possibility to use fixed motion planets.
 
-<img src="img/free-return.png" width="800">
+![alt text](img/free-return.png)
 *Free return apollo style transfer trajectory with the moon*
 
 ## Features
